@@ -25,7 +25,7 @@ place_model = place_namespace.model('Place', {
     'amenities': fields.List(fields.String, required=False, description="List of amenities ID's")
 })
 
-# Define a model for partial place updates (all fields optional)
+# Model for partial place updates
 place_update_model = place_namespace.model('PlaceUpdate', {
     'title': fields.String(required=False, description='Title of the place'),
     'description': fields.String(required=False, description='Description of the place'),
@@ -60,7 +60,8 @@ place_list_model = place_namespace.model('PlaceList', {
     'id': fields.String(description='Place ID'),
     'title': fields.String(description='Title of the place'),
     'latitude': fields.Float(description='Latitude of the place'),
-    'longitude': fields.Float(description='Longitude of the place')
+    'longitude': fields.Float(description='Longitude of the place'),
+    'price': fields.Float(description='Price per night')
 })
 
 @place_namespace.route('/')
@@ -99,7 +100,8 @@ class PlaceList(Resource):
                 'id': place.id,
                 'title': place.title,
                 'latitude': place.latitude,
-                'longitude': place.longitude
+                'longitude': place.longitude,
+                'price': float(place.price) if place.price else 0
             } for place in places], 200
         except Exception as e:
             return {'error': f'Internal server error: {str(e)}'}, 500
@@ -135,7 +137,12 @@ class PlaceResource(Resource):
                     'id': review.id,
                     'text': review.text,
                     'rating': review.rating,
-                    'user_id': review_user.id if review_user else 'Unknown'
+                    'user_id': review.user_id,
+                    'user': {
+                        'id': review_user.id,
+                        'first_name': review_user.first_name,
+                        'last_name': review_user.last_name
+                    } if review_user else None
                 })
             
             response = {

@@ -43,7 +43,7 @@ def create_app():
 
     with app.app_context():
         db.create_all()
-        print("✅ Tables créées avec succès!")
+        print("✅ Tables created successfully!")
 
     from app.api.v1.users import user_namespace as users_ns
     from app.api.v1.amenities import amenity_namespace

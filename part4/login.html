@@ -3,22 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>HBnB - Login</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="header-left">
+            <img src="images/icon.png" alt="HBnB Logo" class="logo">
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle-btn" class="theme-button" title="Change Theme">🎨</button>
+            <a href="login.html" class="login-button">Login</a>
+        </div>
+    </header>
+    
+    <!-- Theme Selection Modal -->
+    <div id="theme-modal" class="theme-modal">
+        <div class="theme-modal-content">
+            <div class="theme-modal-header">
+                <h2>Choose Your Theme</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="theme-selector">
+                <div class="theme-option" data-theme="red">
+                    <div class="theme-preview red-preview"></div>
+                    <span>Default Red</span>
+                </div>
+                <div class="theme-option" data-theme="forest">
+                    <div class="theme-preview forest-preview"></div>
+                    <span>Forest Green</span>
+                </div>
+                <div class="theme-option" data-theme="ocean">
+                    <div class="theme-preview ocean-preview"></div>
+                    <span>Ocean Blue</span>
+                </div>
+            </div>
+            
+            <div class="mode-toggle">
+                <span class="mode-label">Light</span>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="mode-label">Dark</span>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <form id="login-form">
-            <h2>Login</h2>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <section class="login-container">
+            <h1>Login to HBnB</h1>
+            <form class="form" id="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        <button type="button" class="toggle-password" onmousedown="togglePassword(true)" onmouseup="togglePassword(false)" onmouseleave="togglePassword(false)">👁️</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button">Login</button>
+            </form>
             
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Login</button>
-        </form>
+            <p class="register-link">Don't have an account? <a href="#">Register here</a></p>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 HBnB. All rights reserved.</p>
+    </footer>
+    
     <script src="scripts.js"></script>
 </body>
 </html>

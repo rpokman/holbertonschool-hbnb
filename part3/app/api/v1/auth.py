@@ -36,14 +36,14 @@ class ProtectedResource(Resource):
 @api.route('/init-admin')
 class InitAdmin(Resource):
     def post(self):
-        """Create initial admin user (à utiliser une seule fois)"""
+        """Create initial admin user (use once only)"""
         try:
-            # Vérifier si un admin existe déjà
+            # Check if admin exists
             existing_admin = facade.get_user_by_email("admin@hbnb.com")
             if existing_admin:
                 return {'error': 'Admin user already exists'}, 400
             
-            # Créer l'admin
+            # Create admin
             admin_data = {
                 "first_name": "Super",
                 "last_name": "Admin", 

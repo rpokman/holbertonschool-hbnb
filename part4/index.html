@@ -3,26 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Places</title>
+    <title>HBnB - List of Places</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="login.html" id="login-link">Login</a>
-        </nav>
+        <div class="header-left">
+            <img src="images/icon.png" alt="HBnB Logo" class="logo">
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle-btn" class="theme-button" title="Change Theme">🎨</button>
+            <a href="login.html" class="login-button">Login</a>
+        </div>
     </header>
+    
+    <!-- Theme Selection Modal -->
+    <div id="theme-modal" class="theme-modal">
+        <div class="theme-modal-content">
+            <div class="theme-modal-header">
+                <h2>Choose Your Theme</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="theme-selector">
+                <div class="theme-option" data-theme="red">
+                    <div class="theme-preview red-preview"></div>
+                    <span>Default Red</span>
+                </div>
+                <div class="theme-option" data-theme="forest">
+                    <div class="theme-preview forest-preview"></div>
+                    <span>Forest Green</span>
+                </div>
+                <div class="theme-option" data-theme="ocean">
+                    <div class="theme-preview ocean-preview"></div>
+                    <span>Ocean Blue</span>
+                </div>
+            </div>
+            
+            <div class="mode-toggle">
+                <span class="mode-label">Light</span>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="mode-label">Dark</span>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <section id="filter">
-            <label for="price-filter">Max Price:</label>
-            <select id="price-filter">
-                <!-- Options will be populated dynamically -->
-            </select>
+        <section id="filter-section">
+            <h1>Find Your Perfect Place</h1>
+            <div class="filter-container">
+                <label for="price-filter">Filter by Price:</label>
+                <select id="price-filter">
+                    <option value="">All</option>
+                    <option value="10">Under $10</option>
+                    <option value="50">Under $50</option>
+                    <option value="100">Under $100</option>
+                    <option value="150">Under $150</option>
+                    <option value="200">Under $200</option>
+                </select>
+            </div>
         </section>
+
         <section id="places-list">
-            <!-- List of places will be populated dynamically -->
+            <div class="place-card">
+                <h2>Cozy Beach House</h2>
+                <p class="place-price">Price: $<span class="price">120</span> per night</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="place-card">
+                <h2>Mountain Cabin Retreat</h2>
+                <p class="place-price">Price: $<span class="price">95</span> per night</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="place-card">
+                <h2>Modern City Apartment</h2>
+                <p class="place-price">Price: $<span class="price">150</span> per night</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="place-card">
+                <h2>Charming Country House</h2>
+                <p class="place-price">Price: $<span class="price">85</span> per night</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="place-card">
+                <h2>Lakeside Villa</h2>
+                <p class="place-price">Price: $<span class="price">200</span> per night</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="place-card">
+                <h2>Desert Oasis</h2>
+                <p class="place-price">Price: $<span class="price">110</span> per night</p>
+                <button class="details-button">View Details</button>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 HBnB. All rights reserved.</p>
+    </footer>
+    
     <script src="scripts.js"></script>
 </body>
 </html>

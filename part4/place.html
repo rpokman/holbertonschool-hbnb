@@ -1,30 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Details</title>
+    <title>HBnB - Place Details</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="header-left">
+            <img src="images/icon.png" alt="HBnB Logo" class="logo">
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle-btn" class="theme-button" title="Change Theme">🎨</button>
+            <a href="login.html" class="login-button">Login</a>
+        </div>
+    </header>
+    
+    <!-- Theme Selection Modal -->
+    <div id="theme-modal" class="theme-modal">
+        <div class="theme-modal-content">
+            <div class="theme-modal-header">
+                <h2>Choose Your Theme</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="theme-selector">
+                <div class="theme-option" data-theme="red">
+                    <div class="theme-preview red-preview"></div>
+                    <span>Default Red</span>
+                </div>
+                <div class="theme-option" data-theme="forest">
+                    <div class="theme-preview forest-preview"></div>
+                    <span>Forest Green</span>
+                </div>
+                <div class="theme-option" data-theme="ocean">
+                    <div class="theme-preview ocean-preview"></div>
+                    <span>Ocean Blue</span>
+                </div>
+            </div>
+            
+            <div class="mode-toggle">
+                <span class="mode-label">Light</span>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="mode-label">Dark</span>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <section id="place-details">
-            <!-- Place details will be populated dynamically -->
-        </section>
-        <section id="reviews">
-            <!-- Reviews will be populated dynamically -->
-        </section>
-        <section id="add-review">
-            <h2>Add a Review</h2>
-            <form id="review-form">
-                <label for="review-text">Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
+        <section class="place-details">
+            <h1>Cozy Beach House</h1>
+            
+            <div class="place-info">
+                <p><strong>Host:</strong> John Doe</p>
+                <p><strong>Price:</strong> $<span class="price">120</span> per night</p>
+                <p><strong>Description:</strong> Experience the ultimate beach getaway in this stunning house with ocean views. Perfect for families and groups looking for a relaxing vacation by the sea. This spacious property features modern amenities while maintaining a cozy coastal charm.</p>
                 
-                <button type="submit">Submit</button>
+                <div class="amenities">
+                    <h3>Amenities:</h3>
+                    <ul>
+                        <li>WiFi</li>
+                        <li>Air Conditioning</li>
+                        <li>Full Kitchen</li>
+                        <li>Private Pool</li>
+                        <li>Beach Access</li>
+                        <li>Free Parking</li>
+                        <li>BBQ Grill</li>
+                        <li>Ocean View</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Guest Reviews</h2>
+            
+            <div class="review-card">
+                <p class="review-comment">"Amazing place! The view was breathtaking and the house had everything we needed. The host was very welcoming and responsive. Highly recommend for anyone looking for a beach getaway!"</p>
+                <p class="review-user"><strong>User:</strong> Sarah Johnson</p>
+                <p class="review-rating"><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-comment">"Great location and very clean. The kitchen was well-equipped and the pool was a huge hit with the kids. Would definitely stay again!"</p>
+                <p class="review-user"><strong>User:</strong> Mike Smith</p>
+                <p class="review-rating"><strong>Rating:</strong> ⭐⭐⭐⭐ (4/5)</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-comment">"Perfect for a family vacation. The beach access was amazing and the house had plenty of space. Kids loved the pool and we enjoyed the BBQ area."</p>
+                <p class="review-user"><strong>User:</strong> Emily Brown</p>
+                <p class="review-rating"><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </section>
+
+        <section class="add-review">
+            <h2>Add Your Review</h2>
+            <p class="login-message">Please <a href="login.html">login</a> to add a review.</p>
+            
+            <form class="form" id="review-form">
+                <div class="form-group">
+                    <label for="review-comment">Your Comment:</label>
+                    <textarea id="review-comment" name="comment" rows="5" required placeholder="Share your experience..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-rating">Rating:</label>
+                    <select id="review-rating" name="rating" required>
+                        <option value="">Select rating</option>
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                        <option value="3">⭐⭐⭐ (3/5)</option>
+                        <option value="2">⭐⭐ (2/5)</option>
+                        <option value="1">⭐ (1/5)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Review</button>
             </form>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 HBnB. All rights reserved.</p>
+    </footer>
+    
     <script src="scripts.js"></script>
 </body>
 </html>

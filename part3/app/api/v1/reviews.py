@@ -10,7 +10,7 @@ review_model = review_namespace.model('Review', {
     'place_id': fields.String(required=True, description='ID of the place')
 })
 
-# Define a model for partial review updates (all fields optional)
+# Model for partial review updates
 review_update_model = review_namespace.model('ReviewUpdate', {
     'text': fields.String(required=False, description='Text of the review'),
     'rating': fields.Integer(required=False, description='Rating of the place (1-5)'),
