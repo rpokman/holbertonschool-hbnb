@@ -20,15 +20,37 @@
     5. Review Endpoints 
     6. Testing and Validation
 
-### Upcoming Parts 🚀
+## __Part 3__ - Authentication & Database 🔐
 
+    0. Environment Configuration
+    1. Database Integration with SQLAlchemy
+    2. User Model with SQLAlchemy
+    3. Place Model with SQLAlchemy
+    4. Review Model with SQLAlchemy
+    5. Amenity Model with SQLAlchemy
+    6. Relationships and Constraints
+    7. JWT Authentication Implementation
+    8. Protected Endpoints
 
-__Part 3__ - Authentication & Database 🔐
-Authentication system and data persistence
+## __Part 4__ - Simple Web Client 🌐
 
-__Part 4__ - Simple Web Client 🌐
-Basic web client to interact with the API
+    0. Project Setup
+    1. Login Page with JWT Authentication
+    2. Places List Page with Filtering
+    3. Place Details Page
+    4. Add Review Functionality
+    5. Theme System (6 themes: red/forest/ocean × light/dark)
+    6. Responsive Design
+
+### Features ✨
+
+- **Authentication**: JWT-based login system with secure token storage
+- **Dynamic Content**: Real-time place listing with price filtering
+- **Reviews**: User review submission with rating system
+- **Themes**: 6 customizable themes with persistent user preference
+- **Amenities**: Visual amenity display with icons (WiFi, Bath, Bed)
+- **Responsive**: Mobile-friendly design
 
 ### Authors 👥
-Schps & Rpok
+[Schps](https://github.com/Schpser) & [Rpok](https://github.com/rpokman)
 2025
